@@ -3,7 +3,7 @@ var animationSpeed = 10; // ms
 var canvas = document.getElementById('canvas');
 var loggedInImage = document.getElementById('no_msg_img_html');
 var canvasContext = canvas.getContext('2d');
-var requestTimeout = 1000 * 2;  // 2 seconds
+var requestTimeout = 1000 * 20;  // 20 seconds
 var rotation = 0;
 var loadingAnimation = new LoadingAnimation();
 
@@ -168,7 +168,7 @@ function getUnreadCount(onSuccess, onError) {
   var xhr = new XMLHttpRequest();
   var abortTimerId = window.setTimeout(function() {
     console.warn('timeout as fuck');
-	xhr.abort();  // synchronously calls onreadystatechange
+	//xhr.abort();  // do nothing lol
   }, requestTimeout);
 
   function handleSuccess(count) {
